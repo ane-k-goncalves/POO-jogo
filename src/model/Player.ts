@@ -1,13 +1,11 @@
 import Personagens from "./Personagens";
 
 export default class Player extends Personagens {
-    public status(): string {
-        return `nome do jogador: ${this.getNome()},\n vida do jogador: ${this.getVida()}`;
-    }
+
     private idPlayer: number = 0;
 
-    constructor(nome: string,vida: number, ataque: number, nivel: number){
-        super(nome, vida, ataque, nivel);
+    constructor(nome: string,vida: number, ataque: number, ){
+        super(nome, vida, ataque);
         this.idPlayer = this.idPlayer;
 
     }
@@ -18,6 +16,25 @@ export default class Player extends Personagens {
     public setIdPlayer(idPlayer:number){
         this.idPlayer = idPlayer;
     }
+
+    public status(): string {
+        return `nome do jogador: ${this.getNome()},\n vida do jogador: ${this.getVida()}`;
+    }
+
+   
+
+    public lutar() {
+        let ataqueAleatorio = Math.random();
+        console.log(ataqueAleatorio)
+        let dano = this.getAtaque() * ataqueAleatorio;
+        return dano;
+    }
+
+    public dialogo(): string {
+        return "Eles vão temer!"
+    }
+
+
     
 
 }

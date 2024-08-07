@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class Nivel {
-    constructor(nivel) {
+class Fase {
+    constructor(nivel, player) {
         this.nivel = nivel;
+        this.player = player;
     }
     atualizarNivel() {
-        return this.nivel;
+        this.nivel = 10;
     }
 }
-exports.default = Nivel;
+exports.default = Fase;

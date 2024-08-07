@@ -1,7 +1,7 @@
-interface Nivel  {
-    status: "active" | "inactive",
-    vida: number;
+import Fase from "./Fase";
+import Player from "./Player";
 
-    getAtualizarVida(): number;
+export default interface Inivel  { 
     
+     atualizarNivel(): number;
 }

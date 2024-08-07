@@ -5,19 +5,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const Personagens_1 = __importDefault(require("./Personagens"));
 class Monstro extends Personagens_1.default {
+    constructor(nome, vida, ataque) {
+        super(nome, vida, ataque);
+    }
     status() {
         return `vida do monstro: ${this.getVida()},\n ataque o monstro${this.getAtaque()}`;
     }
-    constructor(nome, vida, ataque, nivel) {
-        super(nome, vida, ataque, nivel);
-        this.pontosDeExperienciaAoDerrotar = 0;
-        this.pontosDeExperienciaAoDerrotar = this.pontosDeExperienciaAoDerrotar;
-    }
-    getPontosDeExperienciaAoDerrotar() {
-        return this.pontosDeExperienciaAoDerrotar;
-    }
-    setPontosDeExperienciaAoDerrotar(pontosDeExperienciaAoDerrotar) {
-        this.pontosDeExperienciaAoDerrotar = pontosDeExperienciaAoDerrotar;
+    dialogo() {
+        return "Eu sou o caçador!";
     }
 }
 exports.default = Monstro;

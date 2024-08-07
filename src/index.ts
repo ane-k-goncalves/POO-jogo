@@ -4,12 +4,14 @@ import JogoController from "./control/JogoController";
 import Jogo from "./model/Jogo";
 import Player from "./model/Player";
 import Monstro from "./model/Monstro";
+import PrimaryScreen from "./view/PrimaryScreen";
+import Nivel from "./model/Nivel";
 
-let player1 : Player = new Player("Ane",70,30,1);
+let player1 : Player = new Player("Ane",70,30);
 player1.setNome("Ane");
 player1.setVida(70);
 player1.setAtaque(30);
-player1.setNivel(1);
+
 player1.setIdPlayer(1)
 console.log(player1)
 
@@ -20,13 +22,9 @@ console.log(player1)
 
 //banco de dados?id player - nivel player
 
-let monstro : Monstro =  new Monstro("Monster", 40, 10, 1);
-monstro.setNome("monstro");
-monstro.setVida(40);
-monstro.setAtaque(10);
-monstro.setNivel(1);
+let monstro : Monstro =  new Monstro("Monster", 40, 10);
 
-monstro.setPontosDeExperienciaAoDerrotar(10);
+
 
 
 
@@ -41,13 +39,22 @@ jogar.getNewPlay();
 console.log(player1.getVida())
 
 let batalha : Jogo = new Jogo();
-batalha.ataquePlayer(player1,monstro);
+batalha.iniciarJogo(player1, monstro);
 
 console.log(monstro.getVida());
 
 console.log(player1.status());
 
 let batalha2 : Jogo = new Jogo();
-batalha.ataquePlayer(player1,monstro);
+batalha.iniciarJogo(player1,monstro);
 console.log(monstro.getVida());
-console.log(player1.getNivel());
+
+
+let p = new Nivel(10)
+
+console.log(p.nivel)
+
+console.log(player1.dialogo())
+console.log(monstro.dialogo())
+console.log(player1.status());
+console.log(monstro.status());

@@ -4,8 +4,13 @@ import Monstro from "./Monstro";
 
 export default class Jogo {
 
+    public iniciarJogo(player:Player, monstro: Monstro): void{
+        player.lutar();
+
+       
+    }
     
-    public ataqueMonstro(player:Player, monstro: Monstro): number{
+    /*public ataqueMonstro(player:Player, monstro: Monstro): number{
 
         if(player.getVida() > 0){
            let dano = monstro.getAtaque();
@@ -14,14 +19,14 @@ export default class Jogo {
            
         }
         return player.getVida();
-    }
+    }*/
 
             //iniciar batalha- ataqueplayer = defesa mosntro- vidamonstro
                         // ataque monstro = defesa player - vidaplayer
                     //   usar for para repetir ate que vida do player ou do monstro chegue a zero
 
 
-    public ataquePlayer(player:Player, monstro:Monstro): number{
+    /*public ataquePlayer(player:Player, monstro:Monstro): number{
     
         if(monstro.getVida() > 0){
             let dano = player.getAtaque();
@@ -44,5 +49,5 @@ export default class Jogo {
         }
      return this.getNivel();
     }*/
-
+    
 }

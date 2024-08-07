@@ -1,24 +1,22 @@
 import Personagens from "./Personagens";
 
 export default class Monstro extends Personagens{
+   
+    constructor(nome: string,vida: number, ataque?: number){
+        super(nome, vida, ataque);
+        
+    }
+
     public status(): string {
         return `vida do monstro: ${this.getVida()},\n ataque o monstro${this.getAtaque()}`;
     }
 
-    private pontosDeExperienciaAoDerrotar: number = 0;
+    public dialogo(): string {
+        return "Eu sou o caçador!"
+    }
+   
 
-    constructor(nome: string,vida: number, ataque: number, nivel: number){
-        super(nome, vida, ataque, nivel);
-        
-        this.pontosDeExperienciaAoDerrotar = this.pontosDeExperienciaAoDerrotar;
-    }
-
-    public getPontosDeExperienciaAoDerrotar(): number{
-        return this.pontosDeExperienciaAoDerrotar;
-    }
-    public setPontosDeExperienciaAoDerrotar(pontosDeExperienciaAoDerrotar:number){
-        this.pontosDeExperienciaAoDerrotar = pontosDeExperienciaAoDerrotar;
-    }
+    
 
 
     

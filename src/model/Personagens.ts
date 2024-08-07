@@ -1,8 +1,8 @@
-export default abstract class Personagens{
+export default class Personagens{
     private nome: string = "";
     private vida: number = 0;
     private ataque: number = 0;
-    private nivel: number = 0;
+   
     
 
     public getNome(): string{
@@ -24,21 +24,27 @@ export default abstract class Personagens{
     public setAtaque(ataque:number){
         this.ataque = ataque;
     }
-    public getNivel(): number{
-        return this.nivel;
-    }
-    public setNivel(nivel:number){
-        this.nivel = nivel;
-    }
+   
 
-    constructor(nome: string, vida: number ,ataque: number,nivel: number){
+    constructor(nome: string, vida: number ,ataque?: number){
         this.nome = nome;
         this.vida = vida;
-        this.ataque = ataque;
-        this.nivel = nivel;
-    
+        if(ataque === undefined) {
+            console.log("Ataque não definido");
+        }else {
+            this.ataque = ataque;
+        }
+       
     }
-    public abstract status(): string;
+    public status(): string {
+        return `nome do jogador: ${this.getNome()},\n vida do jogador: ${this.getVida()}`;
+    }
+
+    public dialogo(): string {
+        return "Eu vou te derrotar"
+    }
+
+   
 
     
     
