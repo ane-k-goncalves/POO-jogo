@@ -12,7 +12,7 @@ class Monstro extends Personagens_1.default {
         return `vida do monstro: ${this.getVida()},\n ataque o monstro${this.getAtaque()}`;
     }
     dialogo() {
-        return "Eu sou o caçador!";
+        return `${this.getNome()} diz:  "Eu sou o caçador!"`;
     }
 }
 exports.default = Monstro;

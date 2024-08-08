@@ -8,6 +8,7 @@ const Jogo_1 = __importDefault(require("./model/Jogo"));
 const Player_1 = __importDefault(require("./model/Player"));
 const Monstro_1 = __importDefault(require("./model/Monstro"));
 const Nivel_1 = __importDefault(require("./model/Nivel"));
+// import BasicController from "./control/BasicController";
 let player1 = new Player_1.default("Ane", 70, 30);
 player1.setNome("Ane");
 player1.setVida(70);
@@ -18,7 +19,7 @@ console.log(player1);
 //dependendo disso
 //fazer documetação
 //banco de dados?id player - nivel player
-let monstro = new Monstro_1.default("Monster", 40, 10);
+let monstro = new Monstro_1.default("Monster", 40, undefined);
 console.log(player1.getVida());
 //let startController: BasicController = new BasicController();
 //startController.startSystem();
@@ -38,3 +39,5 @@ console.log(player1.dialogo());
 console.log(monstro.dialogo());
 console.log(player1.status());
 console.log(monstro.status());
+// let firstScreen: BasicController = new BasicController();
+// firstScreen.startSystem();

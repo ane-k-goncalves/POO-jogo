@@ -7,6 +7,8 @@ import Monstro from "./model/Monstro";
 import PrimaryScreen from "./view/PrimaryScreen";
 import Nivel from "./model/Nivel";
 
+// import BasicController from "./control/BasicController";
+
 let player1 : Player = new Player("Ane",70,30);
 player1.setNome("Ane");
 player1.setVida(70);
@@ -22,7 +24,7 @@ console.log(player1)
 
 //banco de dados?id player - nivel player
 
-let monstro : Monstro =  new Monstro("Monster", 40, 10);
+let monstro : Monstro =  new Monstro("Monster", 40, undefined);
 
 
 
@@ -58,3 +60,9 @@ console.log(player1.dialogo())
 console.log(monstro.dialogo())
 console.log(player1.status());
 console.log(monstro.status());
+
+
+
+// let firstScreen: BasicController = new BasicController();
+
+// firstScreen.startSystem();

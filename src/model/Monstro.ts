@@ -12,9 +12,10 @@ export default class Monstro extends Personagens{
     }
 
     public dialogo(): string {
-        return "Eu sou o caçador!"
+        
+        return `${this.getNome()} diz:  "Eu sou o caçador!"`;
     }
-   
+    
 
     
 

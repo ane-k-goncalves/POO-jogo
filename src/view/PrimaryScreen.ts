@@ -16,7 +16,11 @@ export default class PrimaryScreen{
         public getFirstScreen():void {
             let showScreen: boolean = false;
         while (!showScreen){
-            console.clear();             
+            console.clear(); 
+            
+            console.log("Bem vindo")
+
+            //cadastro logar
             let choice = this.prompt("1: jogar - 2: sair");
             
             switch (choice) {
