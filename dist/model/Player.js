@@ -21,12 +21,11 @@ class Player extends Personagens_1.default {
     }
     lutar() {
         let ataqueAleatorio = Math.random();
-        console.log(ataqueAleatorio);
         let dano = this.getAtaque() * ataqueAleatorio;
         return dano;
     }
     dialogo() {
-        return "Eles vão temer!";
+        return `${this.getNome()} diz:  "Eles vão temer!"`;
     }
 }
 exports.default = Player;

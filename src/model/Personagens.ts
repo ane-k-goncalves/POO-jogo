@@ -41,7 +41,7 @@ export default class Personagens{
     }
 
     public dialogo(): string {
-        return "Eu vou te derrotar"
+        return "Eu vou te derrotar";
     }
 
    
