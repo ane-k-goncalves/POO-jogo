@@ -12,5 +12,5 @@ export default abstract class Fase {
     atualizarNivel(): void{
         this.nivel = 10;
     }
-
+//ta redundante
 }

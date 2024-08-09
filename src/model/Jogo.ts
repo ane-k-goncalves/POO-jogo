@@ -5,8 +5,13 @@ import Monstro from "./Monstro";
 export default class Jogo {
 
     public iniciarJogo(player:Player, monstro: Monstro): void{
-        player.lutar();
-
+       
+            let ataqueAleatorio = Math.random();
+            let dano = player.getAtaque() * ataqueAleatorio;
+           
+        if(dano >= 5 ) {
+            console.log(`O jogador ${player.getNome()} venceu a partida!Seu dano foi ${dano}`)
+        }
        
     }
     
