@@ -1,4 +1,4 @@
-export default class Personagens{
+export default abstract class Personagens{
     private nome: string = "";
     private vida: number = 0;
     private ataque: number = 0;

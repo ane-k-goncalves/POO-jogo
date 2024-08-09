@@ -1,12 +1,15 @@
+import { TipoPlayer } from './TipoPlayer';
 import Personagens from "./Personagens";
 
 export default class Player extends Personagens {
 
     private idPlayer: number = 0;
+    private tipoPlayer: TipoPlayer;
 
-    constructor(nome: string,vida: number, ataque: number, ){
+    constructor(nome: string,vida: number, ataque: number, tipoPlayer:TipoPlayer){
         super(nome, vida, ataque);
         this.idPlayer = this.idPlayer;
+        this.tipoPlayer = tipoPlayer;
 
     }
 
@@ -18,16 +21,10 @@ export default class Player extends Personagens {
     }
 
     public status(): string {
-        return `nome do jogador: ${this.getNome()},\n vida do jogador: ${this.getVida()}`;
+        return `nome do jogador: ${this.getNome()}, vida do jogador: ${this.getVida()}, eu sou ${TipoPlayer[this.tipoPlayer]}.`;
     }
 
    
-
-    public lutar() {
-        let ataqueAleatorio = Math.random();
-        let dano = this.getAtaque() * ataqueAleatorio;
-        return dano;
-    }
 
     public dialogo(): string {
         return `${this.getNome()} diz:  "Eles vão temer!"`;

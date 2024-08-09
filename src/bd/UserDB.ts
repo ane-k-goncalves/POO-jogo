@@ -1,10 +1,15 @@
 import User from "../model/User";
 
 export default class UserDB {
-    private user: User [] = [];
+    private users: User [] = [];
 
     public newUser(user: User) {
-        this.user.push(user);
+        this.users.push(user);
+        console.log("Usuário salvo no banco de dados!");
+    }
+
+    public getUsers(): User[] {
+        return this.users;
     }
 
 }

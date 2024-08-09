@@ -3,12 +3,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const TipoPlayer_1 = require("./TipoPlayer");
 const Personagens_1 = __importDefault(require("./Personagens"));
 class Player extends Personagens_1.default {
-    constructor(nome, vida, ataque) {
+    constructor(nome, vida, ataque, tipoPlayer) {
         super(nome, vida, ataque);
         this.idPlayer = 0;
         this.idPlayer = this.idPlayer;
+        this.tipoPlayer = tipoPlayer;
     }
     getIdPlayer() {
         return this.idPlayer;
@@ -17,12 +19,7 @@ class Player extends Personagens_1.default {
         this.idPlayer = idPlayer;
     }
     status() {
-        return `nome do jogador: ${this.getNome()},\n vida do jogador: ${this.getVida()}`;
-    }
-    lutar() {
-        let ataqueAleatorio = Math.random();
-        let dano = this.getAtaque() * ataqueAleatorio;
-        return dano;
+        return `nome do jogador: ${this.getNome()}, vida do jogador: ${this.getVida()}, eu sou ${TipoPlayer_1.TipoPlayer[this.tipoPlayer]}.`;
     }
     dialogo() {
         return `${this.getNome()} diz:  "Eles vão temer!"`;
