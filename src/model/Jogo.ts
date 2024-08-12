@@ -1,19 +1,25 @@
 import Personagens from "./Personagens";
 import Player from "./Player";
 import Monstro from "./Monstro";
+import Fase from "./Fase";
 
-export default class Jogo {
+export default class Jogo{
 
-    public iniciarJogo(player:Player, monstro: Monstro): void{
+
+    public iniciarJogo(player:Player, monstro: Monstro): number{
        
             let ataqueAleatorio = Math.random();
             let dano = player.getAtaque() * ataqueAleatorio;
            
-        if(dano >= 5 ) {
+        if(dano >= 7 ) {
             console.log(`O jogador ${player.getNome()} venceu a partida!Seu dano foi ${dano}`)
         }
-       
+        return dano;
     }
+
+
+
+
     
     /*public ataqueMonstro(player:Player, monstro: Monstro): number{
 

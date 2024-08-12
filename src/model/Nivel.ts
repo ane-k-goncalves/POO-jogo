@@ -1,14 +1,18 @@
-import Inivel from "./Inivel"
+import Fase from "./Fase";
+import Player from "./Player";
 
-export default class Nivel implements Inivel {
-    public nivel: number;
-    TipoPlayer: any;
+export default class Nivel extends Fase {
 
-    constructor(nivel:number) {
-        this.nivel = nivel;
+    constructor(nivel:number, player:Player) {
+       super(nivel, player);
     }
-    atualizarNivel(): number{
-       return this.nivel;
+    atualizarNivel(): void{
+        if (this.nivel >= 20) {
+            console.log("Fase 2!");
+        } else {
+            console.log("Ainda na fase 1");
+        }
+
     }
 }
 

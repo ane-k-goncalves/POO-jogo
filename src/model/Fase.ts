@@ -1,7 +1,7 @@
 import Player from "./Player";
 
 export default abstract class Fase {
-    private nivel: number;
+    protected nivel: number;
     private player: Player;
 
     public constructor(nivel:number, player:Player){
@@ -9,8 +9,6 @@ export default abstract class Fase {
         this.player = player;
     }
 
-    atualizarNivel(): void{
-        this.nivel = 10;
-    }
-//ta redundante
+    abstract atualizarNivel(): void;
+
 }

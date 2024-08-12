@@ -1,5 +1,6 @@
 import Datacenter from "../bd/Datacenter";
 import Jogo from "../model/Jogo";
+import Player from "../model/Player";
 import PrimaryScreen from "../view/PrimaryScreen";
 
 export default class JogoController{
