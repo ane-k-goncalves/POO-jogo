@@ -12,4 +12,11 @@ export default class UserDB {
         return this.users;
     }
 
+
+
+    public getUserByEmailAndPassword(email: string, senha: string): User | null {
+        const user = this.users.find(u => u.getEmail() === email && u.getSenha() === senha);
+        return user || null;  // Retorna o usuário se encontrado, caso contrário, retorna null
+    }
+
 }

@@ -62,11 +62,11 @@ let j = new Jogo();
 
 j.iniciarJogo(player1,monstro);
 
-//let firstScreen: BasicController = new BasicController();
+let firstScreen: BasicController = new BasicController();
 
-//firstScreen.startSystem();
+firstScreen.startSystem();
 
-let p = new Nivel(10, player1 )
+let p = new Nivel(20, player1 )
 
 console.log(p.atualizarNivel());
 

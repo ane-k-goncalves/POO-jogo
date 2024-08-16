@@ -12,5 +12,18 @@ class UserController {
         this.datacenter.newUser(user);
         console.log(`Usuário ${user.getName()} registrado com sucesso!`);
     }
+    loginUser(email, senha) {
+        const user = this.datacenter.getUserByEmailAndPassword(email, senha);
+        if (user) {
+            return user;
+        }
+        else {
+            console.log("Email ou senha incorretos.");
+            return null;
+        }
+    }
+    listarUsers() {
+        return this.datacenter.getUsers();
+    }
 }
 exports.default = UserController;

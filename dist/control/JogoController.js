@@ -15,5 +15,10 @@ class JogoController {
     registerNewJogo(jogo) {
         this.datacenter.addNewPlay(jogo);
     }
+    iniciarJogo(player, monstro) {
+        const jogo = this.getNewPlay();
+        jogo.iniciarJogo(player, monstro);
+        this.registerNewJogo(jogo);
+    }
 }
 exports.default = JogoController;
