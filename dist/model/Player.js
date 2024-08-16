@@ -8,18 +8,10 @@ const Personagens_1 = __importDefault(require("./Personagens"));
 class Player extends Personagens_1.default {
     constructor(nome, vida, ataque, tipoPlayer) {
         super(nome, vida, ataque);
-        this.idPlayer = 0;
-        this.idPlayer = this.idPlayer;
         this.tipoPlayer = tipoPlayer;
     }
-    getIdPlayer() {
-        return this.idPlayer;
-    }
-    setIdPlayer(idPlayer) {
-        this.idPlayer = idPlayer;
-    }
     status() {
-        return `nome do jogador: ${this.getNome()}, vida do jogador: ${this.getVida()}, eu sou ${TipoPlayer_1.TipoPlayer[this.tipoPlayer]}.`;
+        return `Nome do jogador: ${this.getNome()}, vida do jogador: ${this.getVida()}, eu sou ${TipoPlayer_1.TipoPlayer[this.tipoPlayer]}.`;
     }
     dialogo() {
         return `${this.getNome()} diz:  "Eles vão temer!"`;
