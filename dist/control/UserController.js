@@ -9,16 +9,27 @@ class UserController {
         this.datacenter = new UserDB_1.default();
     }
     newUser(user) {
-        this.datacenter.newUser(user);
-        console.log(`Usuário ${user.getName()} registrado com sucesso!`);
+        try {
+            this.datacenter.newUser(user);
+            console.log(`Usuário ${user.getName()} registrado com sucesso!`);
+        }
+        catch (error) {
+            console.error("Erro ao registrar o usuário:", error);
+        }
     }
     loginUser(email, senha) {
-        const user = this.datacenter.getUserByEmailAndPassword(email, senha);
-        if (user) {
-            return user;
+        try {
+            const user = this.datacenter.getUserByEmailAndPassword(email, senha);
+            if (user) {
+                return user;
+            }
+            else {
+                console.log("Email ou senha incorretos.");
+                return null;
+            }
         }
-        else {
-            console.log("Email ou senha incorretos.");
+        catch (error) {
+            console.log("Erro no login", error);
             return null;
         }
     }

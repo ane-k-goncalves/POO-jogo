@@ -6,14 +6,12 @@ class UserDB {
     }
     newUser(user) {
         this.users.push(user);
-        console.log("Usuário salvo no banco de dados!");
     }
     getUsers() {
         return this.users;
     }
     getUserByEmailAndPassword(email, senha) {
-        const user = this.users.find(u => u.getEmail() === email && u.getSenha() === senha);
-        return user || null; // Retorna o usuário se encontrado, caso contrário, retorna null
+        return this.users.find(u => u.getEmail() === email && u.getSenha() === senha) || null;
     }
 }
 exports.default = UserDB;

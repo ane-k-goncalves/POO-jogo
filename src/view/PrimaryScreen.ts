@@ -42,11 +42,11 @@ export default class PrimaryScreen{
 
                     let u = new User(nome, email, senha);
                     this.userController.newUser(u);
-                    console.log("Usuário cadastrado!");
+        
 
-                    const allUsers = this.userController.listarUsers();
-                    console.log(allUsers);
-                    break;
+                    //const allUsers = this.userController.listarUsers();
+                    //console.log(allUsers);
+                    
                     
                 case '2':
                     console.log("Bem vindo, entre na sua conta!")

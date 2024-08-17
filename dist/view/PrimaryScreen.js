@@ -27,10 +27,8 @@ class PrimaryScreen {
                     let senha = this.prompt("Senha: ");
                     let u = new User_1.default(nome, email, senha);
                     this.userController.newUser(u);
-                    console.log("Usuário cadastrado!");
-                    const allUsers = this.userController.listarUsers();
-                    console.log(allUsers);
-                    break;
+                //const allUsers = this.userController.listarUsers();
+                //console.log(allUsers);
                 case '2':
                     console.log("Bem vindo, entre na sua conta!");
                     let loginEmail = this.prompt("Email: ");
@@ -39,7 +37,7 @@ class PrimaryScreen {
                         let existingUser = this.userController.loginUser(loginEmail, loginSenha);
                         if (existingUser) {
                             console.log(`Bem vindo!`);
-                            let escolha = this.prompt("1: Criar personagem -  2:Iniciar jogo");
+                            let escolha = this.prompt("1:Iniciar jogo");
                             let player1;
                             switch (escolha) {
                                 case '1':
@@ -72,7 +70,6 @@ class PrimaryScreen {
                                     let monstro = new Monstro_1.default("monstro", 100, 50);
                                     this.jogoController.iniciarJogo(player1, monstro);
                                     break;
-                                case '2':
                                 default:
                                     console.log("Escolha inválida. Voltando ao menu principal.");
                                     break;
