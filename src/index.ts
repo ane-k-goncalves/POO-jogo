@@ -6,7 +6,7 @@ import Jogo from "./model/Jogo";
 import Player from "./model/Player";
 import Monstro from "./model/Monstro";
 import PrimaryScreen from "./view/PrimaryScreen";
-import Nivel from "./model/Nivel";
+//import Nivel from "./model/Nivel";
 import PowerCegar from './model/PowerCegar';
 
 // import BasicController from "./control/BasicController";
@@ -29,7 +29,7 @@ let monstro : Monstro =  new Monstro("Monster", 40, undefined);
 //startController.startSystem();
 
 let jogar : JogoController = new JogoController();
-jogar.getNewPlay();
+//jogar.getNewPlay();
 
 
 
@@ -40,8 +40,6 @@ console.log(monstro.getVida());
 
 
 
-//let batalha2 : Jogo = new Jogo();
-//batalha.iniciarJogo(player1,monstro);
 console.log(monstro.getVida());
 
 
@@ -58,17 +56,21 @@ let player1 : Player = new Player("Ane",70,30, TipoPlayer.controlador);
 console.log(player1.status());
 console.log(player1.dialogo());
 
-let j = new Jogo();
+//let j = new Jogo();
 
-j.iniciarJogo(player1,monstro);
+//j.iniciarJogo(player1,monstro,20);
 
 let firstScreen: BasicController = new BasicController();
 
 firstScreen.startSystem();
 
-let p = new Nivel(20, player1 )
+//let p = new Nivel(20, player1 )
 
-console.log(p.atualizarNivel());
+//console.log(p.atualizarNivel());
 
 let power = new PowerCegar("Cegar", "tira a visão dos inimigos por 10 segundos");
 power.usePower(player1);
+let nivel = 1;
+
+let batalha2 : Jogo<number> = new Jogo(nivel, player1);
+console.log(batalha2.iniciarJogo(nivel, player1));

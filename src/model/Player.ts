@@ -2,6 +2,7 @@ import { TipoPlayer } from './TipoPlayer';
 import Personagens from "./Personagens";
 
 export default class Player extends Personagens {
+    
 
     private tipoPlayer: TipoPlayer;
 

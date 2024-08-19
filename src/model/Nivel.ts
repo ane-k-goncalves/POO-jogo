@@ -1,4 +1,4 @@
-import Fase from "./Fase";
+/*import Fase from "./Fase";
 import Player from "./Player";
 
 export default class Nivel extends Fase {
@@ -19,3 +19,4 @@ export default class Nivel extends Fase {
 
 
 
+*/

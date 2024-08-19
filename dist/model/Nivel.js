@@ -1,20 +1,23 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const Fase_1 = __importDefault(require("./Fase"));
-class Nivel extends Fase_1.default {
-    constructor(nivel, player) {
-        super(nivel, player);
+/*import Fase from "./Fase";
+import Player from "./Player";
+
+export default class Nivel extends Fase {
+
+    constructor(nivel:number, player:Player) {
+       super(nivel, player);
     }
-    atualizarNivel() {
+    atualizarNivel(): void{
         if (this.nivel >= 20) {
             console.log("Fase 2!");
-        }
-        else {
+        } else {
             console.log("Ainda na fase 1");
         }
+
     }
 }
-exports.default = Nivel;
+
+
+
+
+*/ 

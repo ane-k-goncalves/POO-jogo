@@ -1,23 +1,25 @@
 import Datacenter from "../bd/Datacenter";
 import Jogo from "../model/Jogo";
 import Monstro from "../model/Monstro";
+
 import Player from "../model/Player";
 import PrimaryScreen from "../view/PrimaryScreen";
 
 export default class JogoController{
-    private datacenter: Datacenter = new Datacenter(); 
+    private datacenter: Datacenter<number> = new Datacenter(); 
 
 
-    public getNewPlay(): Jogo {
-         return new Jogo();
+    public getNewPlay(nivel: number, player: Player): Jogo<number> {
+         return new Jogo<number>(nivel, player);
     }
-    public registerNewJogo(jogo: Jogo){
+    public registerNewJogo(jogo: Jogo<number>){
         this.datacenter.addNewPlay(jogo);
     }
 
-    public iniciarJogo(player: Player, monstro: Monstro): void {
-        const jogo = this.getNewPlay();
-        jogo.iniciarJogo(player, monstro);
+    public iniciarJogo(player: Player, nivel:number): void {
+        const jogo = this.getNewPlay( nivel, player);
+        jogo.iniciarJogo(nivel, player);
         this.registerNewJogo(jogo);
+
     }
 }

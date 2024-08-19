@@ -1,21 +1,36 @@
-import Personagens from "./Personagens";
-import Player from "./Player";
-import Monstro from "./Monstro";
 import Fase from "./Fase";
+import Player from "./Player";
 
-export default class Jogo{
+export default class Jogo<V extends number> extends Fase<V> {
 
-
-    public iniciarJogo(player:Player, monstro: Monstro): number{
-       
-            let ataqueAleatorio = Math.random();
-            let dano = player.getAtaque() * ataqueAleatorio;
-           
-        if(dano >= 7 ) {
-            console.log(`O jogador ${player.getNome()} venceu a partida!Seu dano foi ${dano}`)
-        }
-        return dano;
+    constructor(nivel: V, player: Player) {
+        super(nivel, player);
     }
+   
+
+    public iniciarJogo(nivel: V, player:Player):void { // Pode retornar um number sem problemas
+        let ataqueAleatorio = Math.random();
+        let dano = this.player.getAtaque() * ataqueAleatorio;
+
+        if (dano >= 7) {
+            console.log(`O jogador ${this.player.getNome()} venceu a partida! Seu dano foi ${dano}`);
+           // this.nivel = 20 as V; // Atualiza o nível se a condição for satisfeita
+        }
+       
+       
+      
+    }
+
+    public atualizarNivel(): V {
+        if (this.nivel >= 20) {
+            console.log("Fase 2!");
+        } else {
+            console.log("Ainda na fase 1");
+        }
+
+        return this.nivel;
+    }
+}
 
 
 
@@ -61,4 +76,3 @@ export default class Jogo{
      return this.getNivel();
     }*/
     
-}

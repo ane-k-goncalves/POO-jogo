@@ -9,15 +9,15 @@ class JogoController {
     constructor() {
         this.datacenter = new Datacenter_1.default();
     }
-    getNewPlay() {
-        return new Jogo_1.default();
+    getNewPlay(nivel, player) {
+        return new Jogo_1.default(nivel, player);
     }
     registerNewJogo(jogo) {
         this.datacenter.addNewPlay(jogo);
     }
-    iniciarJogo(player, monstro) {
-        const jogo = this.getNewPlay();
-        jogo.iniciarJogo(player, monstro);
+    iniciarJogo(player, nivel) {
+        const jogo = this.getNewPlay(nivel, player);
+        jogo.iniciarJogo(nivel, player);
         this.registerNewJogo(jogo);
     }
 }

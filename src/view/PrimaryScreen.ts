@@ -9,6 +9,7 @@ import UserController from "../control/UserController";
 import Player from '../model/Player';
 import { log } from 'console';
 import Monstro from '../model/Monstro';
+//import Nivel from '../model/Nivel';
 
 export default class PrimaryScreen{
     private jogoController : JogoController;
@@ -59,7 +60,7 @@ export default class PrimaryScreen{
                       let existingUser = this.userController.loginUser(loginEmail, loginSenha);
                         if (existingUser) {
                             console.log(`Bem vindo!`);
-                            let escolha = this.prompt("1:Iniciar jogo");
+                            let escolha = this.prompt("1:Criar seu personagem - 2:Sair");
                             let  player1:any 
 
                             switch(escolha) {
@@ -93,16 +94,35 @@ export default class PrimaryScreen{
                 
                                     
                                 let player1 : Player = new Player(nomePlayer, vida, ataque, tipoPlayer);
-                                console.log(player1.status());
+                                let monstro1 = new Monstro("monstro", 100, 50);
                                 
-                                console.log("Iniciando jogo...");
+                                    let opcoes = this.prompt("1: Iniciar partida - 2:Consultar Nivel - 3:Dados jogador - 4:Sair ")
+                                    switch(opcoes) {
+                                        case '1': 
+                                            console.log("Iniciando jogo...");
+                                            let nivel = 1;
+                                          
+                                          console.log( this.jogoController.iniciarJogo(player1, nivel));
 
-                                   
-                             
-                                let monstro = new Monstro("monstro", 100, 50)
-                                this.jogoController.iniciarJogo(player1, monstro);
+                                           break;
+                                       /* case '2':
+                                            let nivelAtualizado =1;
+                                            let a:Jogo<number> = new Jogo(nivelAtualizado, player1);
+                                            console.log(a.atualizarNivel());
+                                        break;*/
+                                        case '3':
+                                            console.log(player1.status());
+                                        break;
+                                    }
+                                
+                                    
+                                
+
                                 break;
-
+                                
+                                case '4':
+                                    console.log("Saindo do jogo!");
+                                    process.exit(0);
                                 default:
                                     console.log("Escolha inválida. Voltando ao menu principal.");
                                     break;
@@ -125,12 +145,6 @@ export default class PrimaryScreen{
         }
     }
 
-
-    public iniciarJogo(): void{
-        const jogo = this.jogoController.getNewPlay();
-        
-        
-    }
 
 }
 

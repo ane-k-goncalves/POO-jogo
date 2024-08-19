@@ -1,7 +1,5 @@
 export default class {
-    static registrar() {
-        throw new Error("Method not implemented.");
-    }
+   
     private name: string;
     private email: string;
     private senha: string;
