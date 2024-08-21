@@ -5,14 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const Fase_1 = __importDefault(require("./Fase"));
 class Jogo extends Fase_1.default {
-    constructor(nivel, player) {
-        super(nivel, player);
+    constructor(nivel, player, monstro) {
+        super(nivel, player, monstro);
     }
-    iniciarJogo(nivel, player) {
+    iniciarJogo(nivel, player, monstro) {
         let ataqueAleatorio = Math.random();
         let dano = player.getAtaque() * ataqueAleatorio;
         let subir = 20;
-        let fase = 1;
         if (dano >= 0.7) {
             console.log(`O jogador ${player.getNome()} venceu a partida! Seu dano foi ${dano}`);
             nivel = 20;
@@ -29,6 +28,7 @@ class Jogo extends Fase_1.default {
             console.log(`O jogador ${player.getNome()} perdeu a partida! Seu dano foi ${dano}`);
             nivel = 5;
             let a = nivel;
+            4;
             if (a >= subir) {
                 console.log("Fase 2!");
             }

@@ -8,7 +8,7 @@ export default class Monstro extends Personagens{
     }
 
     public status(): string {
-        return `vida do monstro: ${this.getVida()},\n ataque o monstro${this.getAtaque()}`;
+        return `O monstro é um ${this.getNome()}, vida do monstro: ${this.getVida()}, ataque o monstro: ${this.getAtaque()}`;
     }
 
     public dialogo(): string {

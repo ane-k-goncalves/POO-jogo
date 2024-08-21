@@ -72,5 +72,5 @@ let power = new PowerCegar("Cegar", "tira a visão dos inimigos por 10 segundos"
 power.usePower(player1);
 let nivel = 1;
 
-let batalha2 : Jogo<number> = new Jogo(nivel, player1);
-console.log(batalha2.iniciarJogo(nivel, player1));
+//let batalha2 : Jogo<number> = new Jogo(nivel, player1);
+//console.log(batalha2.iniciarJogo(nivel, player1));

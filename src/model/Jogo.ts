@@ -1,18 +1,20 @@
 import Fase from "./Fase";
+import GerarMonstro from "./GerarMonstro";
+import Monstro from "./Monstro";
 import Player from "./Player";
 
 export default class Jogo<V extends number> extends Fase<V> {
 
-    constructor(nivel: V, player: Player) {
-        super(nivel, player);
+    constructor(nivel: V, player: Player, monstro: Monstro) {
+        super(nivel, player, monstro);
     }
    
 
-    public iniciarJogo(nivel: V, player:Player):void { // Pode retornar um number sem problemas
+    public iniciarJogo(nivel: V, player:Player, monstro:Monstro):void { // Pode retornar um number sem problemas
         let ataqueAleatorio = Math.random();
         let dano = player.getAtaque() * ataqueAleatorio;
         let subir = 20;
-        let fase = 1;
+        
 
         if (dano >= 0.7) {
             console.log(`O jogador ${player.getNome()} venceu a partida! Seu dano foi ${dano}`);
@@ -35,7 +37,8 @@ export default class Jogo<V extends number> extends Fase<V> {
             nivel = 5 as V;
         
        
-        let a = nivel;
+        let a = nivel;4
+        
 
         if (a >= subir) {
             console.log("Fase 2!");

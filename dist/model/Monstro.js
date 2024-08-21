@@ -9,7 +9,7 @@ class Monstro extends Personagens_1.default {
         super(nome, vida, ataque);
     }
     status() {
-        return `vida do monstro: ${this.getVida()},\n ataque o monstro${this.getAtaque()}`;
+        return `O monstro é um ${this.getNome()}, vida do monstro: ${this.getVida()}, ataque o monstro: ${this.getAtaque()}`;
     }
     dialogo() {
         return `${this.getNome()} diz:  "Eu sou o caçador!"`;

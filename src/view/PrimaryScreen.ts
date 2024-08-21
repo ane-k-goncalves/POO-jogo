@@ -9,6 +9,7 @@ import UserController from "../control/UserController";
 import Player from '../model/Player';
 import { log } from 'console';
 import Monstro from '../model/Monstro';
+import GerarMonstro from '../model/GerarMonstro';
 //import Nivel from '../model/Nivel';
 
 export default class PrimaryScreen{
@@ -43,10 +44,7 @@ export default class PrimaryScreen{
 
                     let u = new User(nome, email, senha);
                     this.userController.newUser(u);
-        
-
-                    //const allUsers = this.userController.listarUsers();
-                    //console.log(allUsers);
+    
                     
                     
                 case '2':
@@ -60,7 +58,8 @@ export default class PrimaryScreen{
                       let existingUser = this.userController.loginUser(loginEmail, loginSenha);
                         if (existingUser) {
                             console.log(`Bem vindo!`);
-                            let escolha = this.prompt("1:Criar seu personagem - 2:Sair");
+                            while(true) {
+                            let escolha = this.prompt("1:Criar seu personagem  -  2:Dados - 3:Sair");
                             let  player1:any 
 
                             switch(escolha) {
@@ -93,21 +92,20 @@ export default class PrimaryScreen{
                                 while(true) {
                                     
                                 let player1 : Player = new Player(nomePlayer, vida, ataque, tipoPlayer);
-                                let monstro1 = new Monstro("monstro", 100, 50);
+                                let criar = new GerarMonstro();
+                                let monstro = criar.gerarMonstro();
                                 
-                                    let opcoes = this.prompt("1: Iniciar partida - 2:Consultar Nivel - 3:Dados jogador - 4:Sair ")
+                                    let opcoes = this.prompt("1: Iniciar partida - 2:Dados Monstro - 3:Dados jogador - 4:Sair ")
                                     switch(opcoes) {
                                         case '1': 
                                             console.log("Iniciando jogo...");
                                             let nivel = 1;
                                           
-                                            console.log(this.jogoController.iniciarJogo(player1, nivel));
+                                            console.log(this.jogoController.iniciarJogo(player1, nivel, monstro));
 
                                            break;
                                         case '2':
-                                            let nivelAtualizado =1;
-                                            let a:Jogo<number> = new Jogo(nivelAtualizado, player1);
-                                          //  console.log(a.atualizarNivel());
+                                           console.log(monstro.status());
                                         break;
                                         case '3':
                                             console.log(player1.status());
@@ -120,12 +118,26 @@ export default class PrimaryScreen{
                                             break;
                                     }
                             }
+
+                            case '2': 
+                                const allUsers = this.userController.listarUsers();
+                                console.log("Seus dados: \n");
+                                console.log( allUsers);
+                            break;
+                            case '3': 
+                           
+                                console.log("Saindo do jogo!");
+                                process.exit(0);
+                                
+                            default:
+                                console.log("Escolha inválida. Por favor, escolha uma opção válida.");
+                                
                         }
-                        
+                    }
                     }
                 }
-                    
-                case '3':
+        
+                case '4':
                     console.log("Saindo do jogo!");
                     process.exit(0);
                     
