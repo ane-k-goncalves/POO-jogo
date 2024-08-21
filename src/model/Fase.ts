@@ -10,6 +10,6 @@ export default abstract class Fase <V>{
     }
   
 
-    abstract atualizarNivel(): V;
+   // abstract atualizarNivel(): V;
     abstract iniciarJogo(nivel: V, player:Player): void;
 }

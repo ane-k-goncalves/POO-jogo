@@ -10,25 +10,40 @@ export default class Jogo<V extends number> extends Fase<V> {
 
     public iniciarJogo(nivel: V, player:Player):void { // Pode retornar um number sem problemas
         let ataqueAleatorio = Math.random();
-        let dano = this.player.getAtaque() * ataqueAleatorio;
+        let dano = player.getAtaque() * ataqueAleatorio;
+        let subir = 20;
+        let fase = 1;
 
-        if (dano >= 7) {
-            console.log(`O jogador ${this.player.getNome()} venceu a partida! Seu dano foi ${dano}`);
-           // this.nivel = 20 as V; // Atualiza o nível se a condição for satisfeita
-        }
-       
-       
-      
-    }
+        if (dano >= 0.7) {
+            console.log(`O jogador ${player.getNome()} venceu a partida! Seu dano foi ${dano}`);
+           
+            nivel = 20 as V; 
 
-    public atualizarNivel(): V {
-        if (this.nivel >= 20) {
+            let a = nivel;
+
+        if (a >= subir) {
             console.log("Fase 2!");
         } else {
             console.log("Ainda na fase 1");
         }
 
-        return this.nivel;
+        subir++;
+
+            
+        }else{
+            console.log(`O jogador ${player.getNome()} perdeu a partida! Seu dano foi ${dano}`);
+            nivel = 5 as V;
+        
+       
+        let a = nivel;
+
+        if (a >= subir) {
+            console.log("Fase 2!");
+        } else {
+            console.log("Ainda na fase 1");
+        }
+
+    }
     }
 }
 

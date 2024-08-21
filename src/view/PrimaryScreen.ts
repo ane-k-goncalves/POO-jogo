@@ -90,8 +90,7 @@ export default class PrimaryScreen{
                                             console.log("Tipo de herói inválido. Usando controlador como padrão.");
                                             tipoPlayer = TipoPlayer.controlador;
                                     }
-
-                
+                                while(true) {
                                     
                                 let player1 : Player = new Player(nomePlayer, vida, ataque, tipoPlayer);
                                 let monstro1 = new Monstro("monstro", 100, 50);
@@ -102,33 +101,29 @@ export default class PrimaryScreen{
                                             console.log("Iniciando jogo...");
                                             let nivel = 1;
                                           
-                                          console.log( this.jogoController.iniciarJogo(player1, nivel));
+                                            console.log(this.jogoController.iniciarJogo(player1, nivel));
 
                                            break;
-                                       /* case '2':
+                                        case '2':
                                             let nivelAtualizado =1;
                                             let a:Jogo<number> = new Jogo(nivelAtualizado, player1);
-                                            console.log(a.atualizarNivel());
-                                        break;*/
+                                          //  console.log(a.atualizarNivel());
+                                        break;
                                         case '3':
                                             console.log(player1.status());
                                         break;
+                                        case '4':
+                                            console.log("Saindo do jogo!");
+                                            process.exit(0);
+                                        default:
+                                            console.log("Escolha inválida. Voltando ao menu principal.");
+                                            break;
                                     }
-                                
-                                    
-                                
-
-                                break;
-                                
-                                case '4':
-                                    console.log("Saindo do jogo!");
-                                    process.exit(0);
-                                default:
-                                    console.log("Escolha inválida. Voltando ao menu principal.");
-                                    break;
                             }
                         }
-                        }
+                        
+                    }
+                }
                     
                 case '3':
                     console.log("Saindo do jogo!");
@@ -137,10 +132,7 @@ export default class PrimaryScreen{
                 default:
                     console.log("Escolha inválida. Por favor, escolha uma opção válida.");
                     break;
-            
-
-
-
+         
          }
         }
     }

@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const TipoPlayer_1 = require("./../model/TipoPlayer");
 const prompt_sync_1 = __importDefault(require("prompt-sync"));
+const Jogo_1 = __importDefault(require("../model/Jogo"));
 const User_1 = __importDefault(require("../model/User"));
 const Player_1 = __importDefault(require("../model/Player"));
 const Monstro_1 = __importDefault(require("../model/Monstro"));
@@ -65,31 +66,32 @@ class PrimaryScreen {
                                             console.log("Tipo de herói inválido. Usando controlador como padrão.");
                                             tipoPlayer = TipoPlayer_1.TipoPlayer.controlador;
                                     }
-                                    let player1 = new Player_1.default(nomePlayer, vida, ataque, tipoPlayer);
-                                    let monstro1 = new Monstro_1.default("monstro", 100, 50);
-                                    let opcoes = this.prompt("1: Iniciar partida - 2:Consultar Nivel - 3:Dados jogador - 4:Sair ");
-                                    switch (opcoes) {
-                                        case '1':
-                                            console.log("Iniciando jogo...");
-                                            let nivel = 1;
-                                            console.log(this.jogoController.iniciarJogo(player1, nivel));
-                                            break;
-                                        /* case '2':
-                                             let nivelAtualizado =1;
-                                             let a:Jogo<number> = new Jogo(nivelAtualizado, player1);
-                                             console.log(a.atualizarNivel());
-                                         break;*/
-                                        case '3':
-                                            console.log(player1.status());
-                                            break;
+                                    while (true) {
+                                        let player1 = new Player_1.default(nomePlayer, vida, ataque, tipoPlayer);
+                                        let monstro1 = new Monstro_1.default("monstro", 100, 50);
+                                        let opcoes = this.prompt("1: Iniciar partida - 2:Consultar Nivel - 3:Dados jogador - 4:Sair ");
+                                        switch (opcoes) {
+                                            case '1':
+                                                console.log("Iniciando jogo...");
+                                                let nivel = 1;
+                                                console.log(this.jogoController.iniciarJogo(player1, nivel));
+                                                break;
+                                            case '2':
+                                                let nivelAtualizado = 1;
+                                                let a = new Jogo_1.default(nivelAtualizado, player1);
+                                                //  console.log(a.atualizarNivel());
+                                                break;
+                                            case '3':
+                                                console.log(player1.status());
+                                                break;
+                                            case '4':
+                                                console.log("Saindo do jogo!");
+                                                process.exit(0);
+                                            default:
+                                                console.log("Escolha inválida. Voltando ao menu principal.");
+                                                break;
+                                        }
                                     }
-                                    break;
-                                case '4':
-                                    console.log("Saindo do jogo!");
-                                    process.exit(0);
-                                default:
-                                    console.log("Escolha inválida. Voltando ao menu principal.");
-                                    break;
                             }
                         }
                     }
