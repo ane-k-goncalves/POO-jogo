@@ -15,5 +15,14 @@ class default_1 {
     getSenha() {
         return this.senha;
     }
+    setName(name) {
+        this.name = name;
+    }
+    setEmail(email) {
+        this.email = email;
+    }
+    setSenha(senha) {
+        this.senha = senha;
+    }
 }
 exports.default = default_1;

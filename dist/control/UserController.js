@@ -4,12 +4,23 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const UserDB_1 = __importDefault(require("../bd/UserDB"));
+const MeuErro_1 = __importDefault(require("../model/MeuErro"));
+const User_1 = __importDefault(require("../model/User"));
 class UserController {
     constructor() {
         this.datacenter = new UserDB_1.default();
     }
+    getNewUser() {
+        return new User_1.default("", "", "");
+    }
     newUser(user) {
         try {
+            if (!user.getName() || !user.getEmail() || !user.getSenha()) {
+                console.error("Erro: Todos os campos devem ser preenchidos.");
+                throw new MeuErro_1.default(user);
+                return;
+            }
+            //throw new Error("Erro simulado ao registrar o usuário"); //forçar erro para cair no catch
             this.datacenter.newUser(user);
             console.log(`Usuário ${user.getName()} registrado com sucesso!`);
         }

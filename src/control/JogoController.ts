@@ -23,4 +23,6 @@ export default class JogoController{
         this.registerNewJogo(jogo);
 
     }
+
+  
 }

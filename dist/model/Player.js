@@ -10,6 +10,12 @@ class Player extends Personagens_1.default {
         super(nome, vida, ataque);
         this.tipoPlayer = tipoPlayer;
     }
+    getTipoPlayer() {
+        return this.tipoPlayer;
+    }
+    setTipoPlayer(tipoPlayer) {
+        this.tipoPlayer = tipoPlayer;
+    }
     status() {
         return `Nome do jogador: ${this.getNome()}, vida do jogador: ${this.getVida()}, eu sou ${TipoPlayer_1.TipoPlayer[this.tipoPlayer]}.`;
     }

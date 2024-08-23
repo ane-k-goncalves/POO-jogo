@@ -21,4 +21,18 @@ export default class {
     public getSenha(): string {
         return this.senha;
     }
+
+    public setName(name:string): void   {
+        this.name = name;
+    }
+
+    public setEmail(email:string): void   {
+        this.email = email;
+    }
+
+    public setSenha(senha:string): void   {
+        this.senha = senha;
+    }
+    
+    
 }

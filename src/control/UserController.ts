@@ -1,12 +1,27 @@
 import UserDB from "../bd/UserDB";
+import MeuErro from "../model/MeuErro";
 import User from "../model/User";
 
 export default class UserController { 
     private datacenter: UserDB  = new UserDB(); 
     
+    public getNewUser(): User {
+        return new User("", "", "");
+    }
 
-    public newUser(user: User): void {
+    public newUser(user: User): void {//armazenar novo user
         try {
+
+            if (!user.getName() || !user.getEmail() || !user.getSenha()) {
+                console.error("Erro: Todos os campos devem ser preenchidos.");
+               throw new MeuErro(user);
+                return;
+                
+            }
+
+            //throw new Error("Erro simulado ao registrar o usuário"); //forçar erro para cair no catch
+          
+
             this.datacenter.newUser(user);
             console.log(`Usuário ${user.getName()} registrado com sucesso!`);
         } catch (error) {

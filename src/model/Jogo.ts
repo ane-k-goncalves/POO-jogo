@@ -38,7 +38,7 @@ export default class Jogo<V extends number> extends Fase<V> {
         
        
         let a = nivel;4
-        
+
 
         if (a >= subir) {
             console.log("Fase 2!");
