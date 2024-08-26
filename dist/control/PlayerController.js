@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const PlayerDB_1 = __importDefault(require("../bd/PlayerDB"));
+const GerarMonstro_1 = __importDefault(require("../model/GerarMonstro"));
 const Player_1 = __importDefault(require("../model/Player"));
 const TipoPlayer_1 = require("../model/TipoPlayer");
 class PlayerController {
@@ -22,6 +23,9 @@ class PlayerController {
     }
     getPlayersTipo(consultarTipoPlayer) {
         return this.playerDb.consultarTipoPlayer(consultarTipoPlayer);
+    }
+    getNewMonstro() {
+        return new GerarMonstro_1.default();
     }
 }
 exports.default = PlayerController;

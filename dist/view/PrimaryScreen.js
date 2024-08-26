@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const TipoPlayer_1 = require("./../model/TipoPlayer");
 const prompt_sync_1 = __importDefault(require("prompt-sync"));
-const GerarMonstro_1 = __importDefault(require("../model/GerarMonstro"));
 const AtualizarFase_1 = __importDefault(require("../model/AtualizarFase"));
 //import Nivel from '../model/Nivel';
 class PrimaryScreen {
@@ -90,7 +89,7 @@ class PrimaryScreen {
                                             if (escolhaPlayer >= 0 && escolhaPlayer < allPlayers.length) {
                                                 let selecionado = allPlayers[escolhaPlayer];
                                                 console.log(`Você escolheu: ${selecionado.status()}`);
-                                                let criar = new GerarMonstro_1.default();
+                                                let criar = this.playerController.getNewMonstro();
                                                 let monstro = criar.gerarMonstro();
                                                 while (true) {
                                                     let opcoes = this.prompt("1: Iniciar partida - 2:Dados Monstro - 3:Dados jogador - 4: Consultar fase - 5:Sair ");
@@ -149,6 +148,7 @@ class PrimaryScreen {
                                             }
                                             const player = this.playerController.getPlayersTipo(tipo);
                                             player.forEach(player => console.log(player.status()));
+                                            break;
                                         case '5':
                                             console.log("Saindo do jogo!");
                                             process.exit(0);

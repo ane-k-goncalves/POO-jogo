@@ -1,4 +1,5 @@
 import PlayerDB from "../bd/PlayerDB";
+import GerarMonstro from "../model/GerarMonstro";
 import Player from "../model/Player";
 import { TipoPlayer } from "../model/TipoPlayer";
 
@@ -21,5 +22,9 @@ export default class PlayerController {
     public getPlayersTipo(consultarTipoPlayer:TipoPlayer): Player[] {
         return this.playerDb.consultarTipoPlayer(consultarTipoPlayer);
        
+    }
+
+    public getNewMonstro(): GerarMonstro{
+        return new GerarMonstro()
     }
 }

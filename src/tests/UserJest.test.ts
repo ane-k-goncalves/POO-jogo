@@ -34,4 +34,14 @@ describe('UserController', () => {
 
         expect(consoleErrorSpy).toHaveBeenCalledWith("Erro: Todos os campos devem ser preenchidos.");
     });
+
+    test('não deve criar usuário com email duplicado', () => {
+        const user1 = new User("duplicado@example.com", "senha123", "Usuario 1");
+        const user2 = new User("duplicado@example.com", "senha456", "Usuario 2");
+
+        user.newUser(user1);
+        const result = user.newUser(user2);
+
+        expect(result).toBe(false);
+    });
 });

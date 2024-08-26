@@ -18,14 +18,19 @@ class UserController {
             if (!user.getName() || !user.getEmail() || !user.getSenha()) {
                 console.error("Erro: Todos os campos devem ser preenchidos.");
                 throw new MeuErro_1.default(user);
-                return;
             }
-            //throw new Error("Erro simulado ao registrar o usuário"); //forçar erro para cair no catch
+            const userExists = this.datacenter.getUsers().find(u => u.getEmail() === user.getEmail());
+            if (userExists) {
+                console.error("Erro: Email já cadastrado.");
+                return false;
+            }
             this.datacenter.newUser(user);
             console.log(`Usuário ${user.getName()} registrado com sucesso!`);
+            return true;
         }
         catch (error) {
             console.error("Erro ao registrar o usuário:", error);
+            return false;
         }
     }
     loginUser(email, senha) {

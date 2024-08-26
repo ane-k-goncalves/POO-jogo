@@ -128,7 +128,7 @@ export default class PrimaryScreen{
                                     let selecionado = allPlayers[escolhaPlayer];
                                     console.log(`Você escolheu: ${selecionado.status()}`);
 
-                                let criar = new GerarMonstro();
+                                let criar = this.playerController.getNewMonstro()
                                 let monstro = criar.gerarMonstro();
                                 while(true){
                                     let opcoes = this.prompt("1: Iniciar partida - 2:Dados Monstro - 3:Dados jogador - 4: Consultar fase - 5:Sair ")
